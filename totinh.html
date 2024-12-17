@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tỏ tình crush</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #ffe6e6;
+        color: #333;
+      }
+
+      h1 {
+        margin-top: 50px;
+        color: #ff4d6d;
+      }
+
+      .container {
+        margin-top: 30px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      #agree {
+        background-color: #ff4d6d;
+        color: white;
+      }
+
+      #agree:hover {
+        background-color: #e63950;
+      }
+
+      #refuse {
+        background-color: #ddd;
+        color: black;
+        position: absolute;
+      }
+
+      #heart {
+        display: none;
+        font-size: 100px;
+        color: #ff4d6d;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Crush ơi, làm người yêu tớ nhé? ❤️</h1>
+    <div class="container">
+      <button id="agree" onclick="acceptLove()">Đồng ý</button>
+      <button id="refuse" onmouseover="moveButton()">Từ chối</button>
+    </div>
+    <div id="heart">❤️</div>
+
+    <script>
+      const refuseButton = document.getElementById("refuse");
+
+      function moveButton() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        refuseButton.style.left = `${x}px`;
+        refuseButton.style.top = `${y}px`;
+      }
+
+      function acceptLove() {
+        document.querySelector("h1").innerText =
+          "Yeahhh! Tớ biết cậu sẽ đồng ý mà! 💖";
+        document.getElementById("heart").style.display = "block";
+        document.querySelector(".container").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
